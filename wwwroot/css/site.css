@@ -18,5 +18,26 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #1f1f1f;
+}
+
+body h1 {
+    background-color: #1f1f1f;
+    background-image: linear-gradient(45deg, #201155, #db69cf);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    color: #825dd3;
+}
+
+h3{
+    color: #7a29ff
+}
+
+p {
+    color: #adb5bd;
 }
