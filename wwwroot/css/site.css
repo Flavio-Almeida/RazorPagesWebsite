@@ -23,6 +23,7 @@ body {
 }
 
 body h1 {
+    font-size: 3rem;
     background-color: #1f1f1f;
     background-image: linear-gradient(45deg, #201155, #db69cf);
     background-size: 100%;
@@ -34,10 +35,20 @@ h2 {
     color: #825dd3;
 }
 
-h3{
-    color: #7a29ff
+h3 {
+    color: #7a29ff;
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 
-p {
+p, ul{
     color: #adb5bd;
+}
+
+ul {
+    list-style: none;
+}
+
+li{
+    line-height:3em;
 }
