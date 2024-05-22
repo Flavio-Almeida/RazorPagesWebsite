@@ -4,7 +4,14 @@
     ViewData["Title"] = "Rick and Morty API";
 }
 
-<h1 class="text-center">@ViewData["Title"]</h1>
+<div class="text-center">
+    <div class="row justify-content-center align-middle pt-5 alig">
+        <div class="col-6 col-md-3 col-sm-4 text-center">
+            <img src="~/img/rmLogo.svg" alt="Image of Rick and Morty" />
+        </div>
+        <h1>@ViewData["Title"]</h1>
+    </div>
+</div>
 
 <h2>How it was done?</h2>
 
@@ -12,9 +19,9 @@
     For this example I used the <a href="https://rickandmortyapi.com/" target="_blank">Rick and Morty API</a>
 </p>
 
-@foreach(var character in Model!.Characters!.Results!)
- {
+@foreach (var character in Model!.Characters!.Results!)
+{
     <ul>
         <li>@character.Name</li>
     </ul>
- }
+}
