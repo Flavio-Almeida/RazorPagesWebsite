@@ -1,25 +1,25 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace RazorPagesWebsite.Models.API
+namespace RazorPagesWebsite.Models.API.RickAndMorty
 {
-    public class Character
+    public class Result
     {
-        [JsonPropertyName("")]
+        [JsonPropertyName("id")]
         public required int Id { get; set; }
 
-        [JsonPropertyName("")]
+        [JsonPropertyName("name")]
         public string? Name { get; set; }
 
-        [JsonPropertyName("")]
+        [JsonPropertyName("status")]
         public string? Status { get; set; }
 
-        [JsonPropertyName("")]
+        [JsonPropertyName("species")]
         public string? Species { get; set; }
 
-        [JsonPropertyName("")]
+        [JsonPropertyName("gender")]
         public string? Gender { get; set; }
 
-        [JsonPropertyName("")]
+        [JsonPropertyName("image")]
         public string? Image { get; set; }
 
     }

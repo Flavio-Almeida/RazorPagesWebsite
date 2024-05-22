@@ -1,0 +1,20 @@
+﻿@page
+@model RazorPagesWebsite.Pages.RickAndMortyModel
+@{
+    ViewData["Title"] = "Rick and Morty API";
+}
+
+<h1 class="text-center">@ViewData["Title"]</h1>
+
+<h2>How it was done?</h2>
+
+<p>
+    For this example I used the <a href="https://rickandmortyapi.com/" target="_blank">Rick and Morty API</a>
+</p>
+
+@foreach(var character in Model!.Characters!.Results!)
+ {
+    <ul>
+        <li>@character.Name</li>
+    </ul>
+ }
