@@ -4,7 +4,7 @@
     ViewData["Title"] = "Rick and Morty API";
 }
 
-<div class="text-center">
+<div class="text-center pb-5">
     <div class="row justify-content-center align-middle pt-5 alig">
         <div class="col-6 col-md-3 col-sm-4 text-center">
             <img src="~/img/rmLogo.svg" alt="Image of Rick and Morty" />
@@ -13,15 +13,26 @@
     </div>
 </div>
 
-<h2>How it was done?</h2>
+<h2 class="pt-5 pb-3">How it was done?</h2>
 
 <p>
-    For this example I used the <a href="https://rickandmortyapi.com/" target="_blank">Rick and Morty API</a>
+    For this example I used the <a href="https://rickandmortyapi.com/" target="_blank">Rick and Morty API</a>.
+    This API works with simple GET requests and without the need for authentication.
 </p>
 
-@foreach (var character in Model!.Characters!.Results!)
-{
-    <ul>
-        <li>@character.Name</li>
-    </ul>
-}
+<div class="row row-cols-2 row-cols-md-4 g-4 pt-4">
+    @foreach (var character in Model!.Characters!.Results!)
+    {
+        <div class="col">
+            <div class="card">
+                <img src="@character.Image" class="card-img-top" alt="Picture of character @character.Name">
+                <div class="card-body">
+                    <h5 class="card-title text-uppercase text-dark text-center">@character.Name</h5>
+                    <p class="text-black-50"><b>Species: </b> @character.Species</p>
+                    <p class="text-black-50"><b>Species: </b> @character.Gender</p>
+                    <p class="text-black-50"><b>Species: </b> @character.Status</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
