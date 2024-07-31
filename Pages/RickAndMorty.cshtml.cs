@@ -10,11 +10,13 @@ namespace RazorPagesWebsite.Pages
     {
         public CharacterApiResponse? Characters { get; set; }
 
-        public async Task OnGet()
+        public async Task OnGet(string? pageNo)
         {
             var simpleGetRequest = new SimpleGetRequest();
+            
+            string pagination = (!string.IsNullOrEmpty(pageNo)) ? $"?page={pageNo}" : "";
 
-            var responseString = await simpleGetRequest.Get("https://rickandmortyapi.com/api/character");
+            var responseString = await simpleGetRequest.Get($"https://rickandmortyapi.com/api/character{pagination}");
 
 
             Characters = JsonSerializer.Deserialize<CharacterApiResponse>(responseString)!;            

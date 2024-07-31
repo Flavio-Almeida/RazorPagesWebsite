@@ -20,7 +20,16 @@
     This API works with simple GET requests and without the need for authentication.
 </p>
 
-<div class="row row-cols-2 row-cols-md-4 g-4 pt-4">
+<p>
+    For the general display of the characters, the endpoint https://rickandmortyapi.com/api/character was used,
+    together with the Info.cs, Result.cs and CharacterApiResponse.cs classes to deserialize the string response.
+</p>
+
+<p>
+    In styles, I used 100% classes from the bootstrap 5.3 library.
+</p>
+
+<div class="row row-cols-2 row-cols-md-4 g-4 pt-4 pb-5">
     @foreach (var character in Model!.Characters!.Results!)
     {
         <div class="col">
@@ -29,10 +38,25 @@
                 <div class="card-body">
                     <h5 class="card-title text-uppercase text-dark text-center">@character.Name</h5>
                     <p class="text-black-50"><b>Species: </b> @character.Species</p>
-                    <p class="text-black-50"><b>Species: </b> @character.Gender</p>
-                    <p class="text-black-50"><b>Species: </b> @character.Status</p>
+                    <p class="text-black-50"><b>Gender: </b> @character.Gender</p>
+                    <p class="text-black-50"><b>Status: </b> @character.Status</p>
                 </div>
             </div>
         </div>
     }
+</div>
+
+<div class="text-center " style="color: #9370db;">
+    @if (Model.Characters.Info != null)
+    {
+        @if (!String.IsNullOrEmpty(Model.Characters.Info.Prev))
+        {
+            <a asp-route-pageNo="@Model.Characters.Info.Prev"><b>&lt;&lt; Previous</b></a>
+        }
+        @if (!String.IsNullOrEmpty(Model.Characters.Info.NextPage))
+        {
+            <a asp-route-pageNo="@Model.Characters.Info.NextPage"><b>Next >></b></a>
+        }
+    }
+    
 </div>
