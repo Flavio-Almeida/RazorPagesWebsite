@@ -49,9 +49,9 @@
 <div class="text-center " style="color: #9370db;">
     @if (Model.Characters.Info != null)
     {
-        @if (!String.IsNullOrEmpty(Model.Characters.Info.Prev))
+        @if (!String.IsNullOrEmpty(Model.Characters.Info.PrevPage))
         {
-            <a asp-route-pageNo="@Model.Characters.Info.Prev"><b>&lt;&lt; Previous</b></a>
+            <a asp-route-pageNo="@Model.Characters.Info.PrevPage"><b>&lt;&lt; Previous</b></a>
         }
         @if (!String.IsNullOrEmpty(Model.Characters.Info.NextPage))
         {

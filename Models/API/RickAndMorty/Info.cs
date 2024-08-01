@@ -21,5 +21,13 @@ namespace RazorPagesWebsite.Models.API.RickAndMorty
         }
         [JsonPropertyName("prev")]
         public string? Prev { get; set; }
+        public string PrevPage
+        {
+            get
+            {
+                return (!String.IsNullOrEmpty(Prev)) ? Prev.Replace(_APIBaseUrl, "") : "";
+            }
+            set { }
+        }
     }
 }
