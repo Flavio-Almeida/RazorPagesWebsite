@@ -29,6 +29,8 @@
     In styles, I used 100% classes from the bootstrap 5.3 library.
 </p>
 
+<partial name="Shared/_RickAndMortyPaginationPartial.cshtml"/>
+
 <div class="row row-cols-2 row-cols-md-4 g-4 pt-4 pb-5">
     @foreach (var character in Model!.Characters!.Results!)
     {
@@ -46,30 +48,4 @@
     }
 </div>
 
-<div class="text-center " style="color: #9370db;">
-    @if (Model.Characters.Info != null)
-    {
-        @if (!String.IsNullOrEmpty(Model.Characters.Info.PrevPage))
-        {
-            <a asp-route-pageNo="@Model.Characters.Info.PrevPage"><b>&lt;&lt; Previous</b></a>
-        }
-        @if (!String.IsNullOrEmpty(Model.Characters.Info.NextPage))
-        {
-            @for (int i = Convert.ToInt32(Model.Characters.Info.NextPage) - 1; 
-                  i <= Convert.ToInt32(Model.Characters.Info.NextPage) + 8;
-                  i++)
-            {
-                @if (i <= Convert.ToInt32(Model.Characters.Info.Pages))
-                {
-                    <a asp-route-pageNo="@i"><b>@i</b></a>
-                }
-                else
-                {
-                    break;
-                }
-            }
-            <a asp-route-pageNo="@Model.Characters.Info.NextPage"><b>Next >></b></a>
-        }
-    }
-    
-</div>
+<partial name="Shared/_RickAndMortyPaginationPartial.cshtml"/>
