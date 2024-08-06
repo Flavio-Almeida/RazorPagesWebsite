@@ -55,6 +55,19 @@
         }
         @if (!String.IsNullOrEmpty(Model.Characters.Info.NextPage))
         {
+            @for (int i = Convert.ToInt32(Model.Characters.Info.NextPage) - 1; 
+                  i <= Convert.ToInt32(Model.Characters.Info.NextPage) + 8;
+                  i++)
+            {
+                @if (i <= Convert.ToInt32(Model.Characters.Info.Pages))
+                {
+                    <a asp-route-pageNo="@i"><b>@i</b></a>
+                }
+                else
+                {
+                    break;
+                }
+            }
             <a asp-route-pageNo="@Model.Characters.Info.NextPage"><b>Next >></b></a>
         }
     }
