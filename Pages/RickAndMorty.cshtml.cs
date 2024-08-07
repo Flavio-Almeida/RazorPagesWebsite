@@ -17,7 +17,11 @@ namespace RazorPagesWebsite.Pages
             string pagination = (!string.IsNullOrEmpty(pageNo)) ? $"?page={pageNo}" : "";
 
             var responseString = await simpleGetRequest.Get($"https://rickandmortyapi.com/api/character{pagination}");
-
+            
+            if (string.IsNullOrEmpty(responseString) )
+            {
+                responseString = await simpleGetRequest.Get($"https://rickandmortyapi.com/api/character?page=1", 2);
+            }
 
             Characters = JsonSerializer.Deserialize<CharacterApiResponse>(responseString)!;            
         }
