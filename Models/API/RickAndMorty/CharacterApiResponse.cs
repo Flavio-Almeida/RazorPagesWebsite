@@ -7,6 +7,6 @@ namespace RazorPagesWebsite.Models.API.RickAndMorty
         [JsonPropertyName("info")]
         public Info? Info { get; set; }
         [JsonPropertyName("results")]
-        public Result[]? Results { get; set; }
+        public List<Result>? Results { get; set; }
     }
 }
