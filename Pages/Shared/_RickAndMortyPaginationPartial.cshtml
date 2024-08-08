@@ -5,7 +5,11 @@
     {
         @if (!String.IsNullOrEmpty(Model.Characters.Info.PrevPage))
         {
-            <a asp-route-pageNo="@Model.Characters.Info.PrevPage"><b>&lt;&lt; Previous</b></a>
+            <a style="text-decoration: none;" asp-route-pageNo="@Model.Characters.Info.PrevPage">
+                <b class="pe-2" >
+                    <img width="30" height="34" src="https://img.icons8.com/fluency/48/long-arrow-left.png" alt="long-arrow-left"/>
+                </b>
+            </a>
         }
         @if (!String.IsNullOrEmpty(Model.Characters.Info.NextPage))
         {
@@ -34,7 +38,11 @@
                     break;
                 }
             }
-            <a asp-route-pageNo="@Model.Characters.Info.NextPage"><b>Next >></b></a>
+            <a style="text-decoration: none;" asp-route-pageNo="@Model.Characters.Info.NextPage">
+                <b class="ps-2">
+                    <img width="30" height="34" src="https://img.icons8.com/fluency/48/long-arrow-right.png" alt="long-arrow-right"/>
+                </b>
+            </a>
         }
     }
 </div>
