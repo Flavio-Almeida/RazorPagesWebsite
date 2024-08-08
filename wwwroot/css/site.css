@@ -56,3 +56,7 @@ li{
 a{
   color: #9370db;;
 }
+
+.pagination-active{
+  color: #009dff;
+}

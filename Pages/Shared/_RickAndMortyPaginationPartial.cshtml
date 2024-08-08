@@ -1,3 +1,4 @@
+@using Microsoft.AspNetCore.Mvc.RazorPages
 
 <div class="text-center " style="color: #9370db;">
     @if (Model.Characters.Info != null)
@@ -8,13 +9,25 @@
         }
         @if (!String.IsNullOrEmpty(Model.Characters.Info.NextPage))
         {
-            @for (int i = Convert.ToInt32(Model.Characters.Info.NextPage) - 1; 
-                  i <= Convert.ToInt32(Model.Characters.Info.NextPage) + 8;
+            @for (int i = Convert.ToInt32(Model.Characters.Info.NextPage) - 5; 
+                  i <= Convert.ToInt32(Model.Characters.Info.NextPage) + 3;
                   i++)
             {
                 @if (i <= Convert.ToInt32(Model.Characters.Info.Pages))
                 {
-                    <a asp-route-pageNo="@i"><b>@i</b></a>
+                    @if (i < 1)
+                    {
+                        //I DID THIS TO CENTER THE ACTIVE PAGE AND AVOID NEGATIVE NUMBERS
+                        i += i * (-1);
+                    }
+                    else if(i == Convert.ToInt32(Model.Characters.Info.NextPage) - 1)
+                    {
+                        <b class="pagination-active">@i</b>
+                    }
+                    else
+                    {
+                        <a asp-route-pageNo="@i"><b>@i</b></a>
+                    }                        
                 }
                 else
                 {

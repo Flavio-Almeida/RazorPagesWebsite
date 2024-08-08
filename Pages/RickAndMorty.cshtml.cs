@@ -10,7 +10,7 @@ namespace RazorPagesWebsite.Pages
     {
         public CharacterApiResponse? Characters { get; set; }
 
-        public async Task OnGet(string? pageNo)
+        public async Task OnGet(string? pageNo = "1")
         {
             var simpleGetRequest = new SimpleGetRequest();
             
